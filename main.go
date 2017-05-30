@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-
-	"google.golang.org/appengine"
+	"net/http"
 )
 
-func main() {
-	fmt.Println("vim-go")
+func init() {
 
-	appengine.Main()
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("hello world")
+	})
 }
